@@ -1,0 +1,1279 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Skyglow Drones Marketing System | Alexana</title>
+  <meta name="description" content="A clear overview of the outreach system Alexana built and ran for Skyglow Drones.">
+  <meta name="robots" content="noindex">
+  <meta property="og:title" content="Skyglow Drones Marketing System">
+  <meta property="og:description" content="A clear overview of the outreach system Alexana built and ran for Skyglow Drones.">
+  <meta property="og:type" content="website">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --night-950: #050914;
+      --night-900: #091222;
+      --night-850: #0c1829;
+      --night-800: #102035;
+      --panel: rgba(17, 33, 54, 0.78);
+      --panel-strong: #12243a;
+      --line: rgba(151, 198, 227, 0.16);
+      --line-strong: rgba(123, 194, 240, 0.34);
+      --text: #f5f8fb;
+      --muted: #aebccc;
+      --soft: #d6e0e8;
+      --teal: #7bc2f0;
+      --green: #18bd5b;
+      --green-soft: #8be5ae;
+      --radius-lg: 24px;
+      --radius-md: 17px;
+      --shadow: 0 18px 55px rgba(0, 0, 0, 0.25);
+      --max-width: 1160px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--night-950);
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      background:
+        radial-gradient(circle at 12% 42%, rgba(25, 108, 160, 0.09), transparent 34rem),
+        linear-gradient(180deg, var(--night-950), var(--night-900) 30rem, #091321 100%);
+      color: var(--text);
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    button,
+    summary {
+      font: inherit;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .skip-link {
+      position: fixed;
+      z-index: 100;
+      top: 12px;
+      left: 12px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: var(--text);
+      color: var(--night-950);
+      font-weight: 700;
+      transform: translateY(-180%);
+      transition: transform 180ms ease;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .shell {
+      width: min(calc(100% - 40px), var(--max-width));
+      margin-inline: auto;
+    }
+
+    .hero {
+      position: relative;
+      isolation: isolate;
+      min-height: 620px;
+      display: grid;
+      align-items: center;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 50% 16%, rgba(77, 154, 211, 0.13), transparent 26rem),
+        linear-gradient(180deg, #040812 0%, rgba(6, 14, 27, 0.95) 62%, rgba(9, 18, 34, 0.98) 100%);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: auto 0 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--teal), var(--green), transparent);
+      opacity: 0.55;
+    }
+
+    #starfield {
+      position: absolute;
+      z-index: -2;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.72;
+      pointer-events: none;
+    }
+
+    .hero-fallback {
+      position: absolute;
+      z-index: -3;
+      inset: 0;
+      opacity: 0.5;
+      background-image:
+        radial-gradient(circle at 12% 24%, rgba(123, 194, 240, 0.8) 0 1px, transparent 1.8px),
+        radial-gradient(circle at 76% 18%, rgba(24, 189, 91, 0.65) 0 1.2px, transparent 2px),
+        radial-gradient(circle at 42% 65%, rgba(208, 232, 247, 0.65) 0 1px, transparent 1.8px),
+        radial-gradient(circle at 88% 70%, rgba(123, 194, 240, 0.6) 0 1px, transparent 1.8px);
+      background-size: 210px 180px, 300px 260px, 250px 230px, 360px 300px;
+    }
+
+    .hero-inner {
+      padding-block: 96px 76px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 22px;
+      color: var(--teal);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 16px rgba(24, 189, 91, 0.8);
+      content: "";
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 850px;
+      margin-inline: auto;
+      margin-bottom: 24px;
+      font-size: clamp(2.6rem, 9vw, 5.6rem);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+      text-wrap: balance;
+    }
+
+    .hero-summary {
+      max-width: 780px;
+      margin: 0 auto;
+      color: var(--soft);
+      font-size: clamp(1.08rem, 2.5vw, 1.34rem);
+      line-height: 1.6;
+      text-wrap: pretty;
+    }
+
+    .prepared {
+      margin: 30px 0 0;
+      color: #8496a9;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    main {
+      overflow: clip;
+    }
+
+    .stats-wrap {
+      position: relative;
+      z-index: 2;
+      margin-top: -38px;
+    }
+
+    .stats-band {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      overflow: hidden;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius-lg);
+      background: rgba(10, 23, 39, 0.94);
+      box-shadow: var(--shadow), 0 0 45px rgba(123, 194, 240, 0.06);
+      backdrop-filter: blur(16px);
+    }
+
+    .stat {
+      min-height: 150px;
+      padding: 25px 17px;
+      text-align: center;
+    }
+
+    .stat:nth-child(odd) {
+      border-right: 1px solid var(--line);
+    }
+
+    .stat:nth-child(-n + 2) {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .stat-number {
+      display: block;
+      background: linear-gradient(120deg, #d8efff 5%, var(--teal) 48%, var(--green-soft));
+      background-clip: text;
+      color: transparent;
+      font-size: clamp(2rem, 8vw, 3.3rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.05em;
+    }
+
+    .stat-label {
+      display: block;
+      margin-top: 9px;
+      color: var(--soft);
+      font-size: 0.86rem;
+      font-weight: 600;
+    }
+
+    .stat-note {
+      display: block;
+      max-width: 170px;
+      margin: 7px auto 0;
+      color: var(--muted);
+      font-size: 0.7rem;
+      line-height: 1.4;
+    }
+
+    .interested-line {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    .interested-line strong {
+      color: var(--green-soft);
+      font-size: 1rem;
+    }
+
+    .interested-line::before {
+      width: 7px;
+      height: 7px;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 12px rgba(24, 189, 91, 0.55);
+      content: "";
+    }
+
+    .section {
+      padding-block: 78px;
+    }
+
+    .section + .section {
+      border-top: 1px solid var(--line);
+    }
+
+    .section-heading {
+      max-width: 690px;
+      margin-bottom: 34px;
+    }
+
+    .kicker {
+      margin-bottom: 9px;
+      color: var(--teal);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin-bottom: 12px;
+      font-size: clamp(2rem, 6vw, 3.25rem);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      text-wrap: balance;
+    }
+
+    .section-intro {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+
+    .pipeline {
+      display: grid;
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: stage;
+    }
+
+    .pipeline li {
+      position: relative;
+      min-height: 168px;
+      padding: 24px 24px 24px 76px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: linear-gradient(145deg, rgba(18, 37, 60, 0.88), rgba(10, 23, 39, 0.76));
+      counter-increment: stage;
+    }
+
+    .pipeline li::before {
+      position: absolute;
+      top: 22px;
+      left: 22px;
+      display: grid;
+      width: 36px;
+      height: 36px;
+      place-items: center;
+      border: 1px solid rgba(123, 194, 240, 0.45);
+      border-radius: 50%;
+      background: rgba(123, 194, 240, 0.08);
+      color: var(--teal);
+      content: counter(stage);
+      font-size: 0.82rem;
+      font-weight: 800;
+      box-shadow: 0 0 18px rgba(123, 194, 240, 0.08);
+    }
+
+    .pipeline h3 {
+      margin-bottom: 8px;
+      font-size: 1.05rem;
+      line-height: 1.3;
+    }
+
+    .pipeline p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    .accordion-stack {
+      display: grid;
+      gap: 12px;
+    }
+
+    details {
+      overflow: clip;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: rgba(15, 31, 51, 0.72);
+      box-shadow: 0 9px 28px rgba(0, 0, 0, 0.12);
+      transition: border-color 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    details:hover {
+      border-color: rgba(123, 194, 240, 0.3);
+    }
+
+    details[open] {
+      border-color: rgba(123, 194, 240, 0.35);
+      background: rgba(17, 35, 57, 0.94);
+      box-shadow: 0 15px 38px rgba(0, 0, 0, 0.18), 0 0 24px rgba(123, 194, 240, 0.035);
+    }
+
+    summary {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 14px;
+      align-items: center;
+      min-height: 82px;
+      padding: 18px 52px 18px 20px;
+      cursor: pointer;
+      list-style: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      position: absolute;
+      right: 20px;
+      width: 10px;
+      height: 10px;
+      border-right: 2px solid var(--teal);
+      border-bottom: 2px solid var(--teal);
+      content: "";
+      transform: rotate(45deg) translateY(-2px);
+      transition: transform 220ms ease;
+    }
+
+    details[open] > summary::after {
+      transform: rotate(225deg) translate(-2px, -2px);
+    }
+
+    summary:focus-visible {
+      outline: 3px solid rgba(123, 194, 240, 0.75);
+      outline-offset: -4px;
+      border-radius: calc(var(--radius-md) - 2px);
+    }
+
+    .summary-title {
+      display: block;
+      color: var(--text);
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .summary-subtitle {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 400;
+      line-height: 1.45;
+    }
+
+    .detail-body {
+      padding: 0 20px 22px;
+      color: var(--soft);
+    }
+
+    .detail-body::before {
+      display: block;
+      height: 1px;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, var(--line-strong), transparent);
+      content: "";
+    }
+
+    .detail-body p:last-child,
+    .detail-body ul:last-child {
+      margin-bottom: 0;
+    }
+
+    .contact-count,
+    .meta-line {
+      margin-top: 15px;
+      color: var(--muted);
+      font-size: 0.79rem;
+    }
+
+    .contact-count strong,
+    .meta-line strong {
+      color: var(--green-soft);
+      font-weight: 650;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .chips li {
+      padding: 5px 10px;
+      border: 1px solid rgba(123, 194, 240, 0.2);
+      border-radius: 999px;
+      background: rgba(123, 194, 240, 0.06);
+      color: #c8dceb;
+      font-size: 0.76rem;
+      line-height: 1.5;
+    }
+
+    .tools-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .tool-summary {
+      grid-template-columns: minmax(0, 1fr) auto;
+      padding-top: 19px;
+      padding-bottom: 19px;
+    }
+
+    .tool-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 6px;
+      max-width: 160px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 3px 9px;
+      border: 1px solid rgba(123, 194, 240, 0.25);
+      border-radius: 999px;
+      color: var(--teal);
+      font-size: 0.69rem;
+      font-weight: 700;
+      line-height: 1.25;
+      white-space: nowrap;
+    }
+
+    .pill.owner {
+      border-color: var(--line);
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .pause-callout {
+      position: relative;
+      margin-top: 22px;
+      padding: 23px 23px 23px 49px;
+      border: 1px solid rgba(24, 189, 91, 0.28);
+      border-radius: var(--radius-md);
+      background: linear-gradient(115deg, rgba(24, 189, 91, 0.08), rgba(123, 194, 240, 0.05));
+      color: var(--soft);
+    }
+
+    .pause-callout::before {
+      position: absolute;
+      top: 28px;
+      left: 23px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 16px rgba(24, 189, 91, 0.65);
+      content: "";
+    }
+
+    .pause-callout h3 {
+      margin-bottom: 5px;
+      font-size: 1rem;
+    }
+
+    .pause-callout p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 14px;
+      padding-left: 24px;
+    }
+
+    .timeline::before {
+      position: absolute;
+      top: 22px;
+      bottom: 22px;
+      left: 5px;
+      width: 1px;
+      background: linear-gradient(var(--teal), var(--green));
+      opacity: 0.42;
+      content: "";
+    }
+
+    .timeline details {
+      position: relative;
+      overflow: visible;
+    }
+
+    .timeline details::before {
+      position: absolute;
+      left: -24px;
+      width: 11px;
+      height: 11px;
+      margin-top: 34px;
+      border: 2px solid var(--night-900);
+      border-radius: 50%;
+      background: var(--teal);
+      box-shadow: 0 0 12px rgba(123, 194, 240, 0.55);
+      content: "";
+    }
+
+    .timeline details:nth-child(n + 4)::before {
+      background: var(--green);
+      box-shadow: 0 0 12px rgba(24, 189, 91, 0.5);
+    }
+
+    .month {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--teal);
+      font-size: 0.71rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .footer {
+      padding-block: 42px 48px;
+      border-top: 1px solid var(--line);
+      color: #8394a6;
+      font-size: 0.75rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .footer p {
+      margin: 0;
+    }
+
+    .footer strong {
+      color: #bcc9d4;
+      font-weight: 600;
+    }
+
+    @media (min-width: 620px) {
+      .shell {
+        width: min(calc(100% - 64px), var(--max-width));
+      }
+
+      .stats-band {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .stat {
+        min-height: 174px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .stat:nth-child(n) {
+        border-bottom: 0;
+      }
+
+      .stat:nth-child(n + 1) {
+        border-right: 1px solid var(--line);
+      }
+
+      .stat:last-child {
+        border-right: 0;
+      }
+
+      summary {
+        padding-inline: 26px 64px;
+      }
+
+      summary::after {
+        right: 27px;
+      }
+
+      .detail-body {
+        padding: 0 26px 26px;
+      }
+
+      .footer-inner {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    @media (min-width: 820px) {
+      .hero {
+        min-height: 680px;
+      }
+
+      .section {
+        padding-block: 104px;
+      }
+
+      .pipeline {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .pipeline li {
+        min-height: 260px;
+        padding: 72px 20px 23px;
+      }
+
+      .pipeline li::before {
+        top: 24px;
+        left: 20px;
+      }
+
+      .pipeline li:not(:last-child)::after {
+        position: absolute;
+        z-index: 2;
+        top: 41px;
+        right: -14px;
+        width: 15px;
+        height: 1px;
+        background: linear-gradient(90deg, var(--teal), var(--green));
+        content: "";
+        opacity: 0.6;
+      }
+
+      .tools-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: start;
+      }
+
+      .tools-grid details:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (min-width: 1080px) {
+      .pipeline li {
+        min-height: 235px;
+        padding-inline: 24px;
+      }
+
+      .pipeline li::before {
+        left: 24px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="hero">
+    <canvas id="starfield" aria-hidden="true"></canvas>
+    <div class="hero-fallback" aria-hidden="true"></div>
+    <div class="shell hero-inner">
+      <p class="eyebrow">Skyglow Drones</p>
+      <h1>Your marketing system, explained</h1>
+      <p class="hero-summary">This is the cold email system Alexana set up and ran for Skyglow Drones. It emails potential drone-show buyers a short sequence, and anyone interested books a call through a landing page.</p>
+      <p class="prepared">Prepared by Alexana</p>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="stats-wrap" aria-labelledby="results-heading">
+      <div class="shell">
+        <h2 id="results-heading" class="visually-hidden" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0">The campaign in numbers</h2>
+        <div class="stats-band">
+          <div class="stat">
+            <span class="stat-number">~15,900</span>
+            <span class="stat-label">Emails sent</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">5,539</span>
+            <span class="stat-label">People reached</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">63%</span>
+            <span class="stat-label">Open rate</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">4</span>
+            <span class="stat-label">Campaigns run</span>
+          </div>
+        </div>
+        <p class="interested-line"><strong>19</strong> interested replies to follow up on</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="pipeline-heading">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="kicker">Overview</p>
+          <h2 id="pipeline-heading">How it works</h2>
+          <p class="section-intro">The system runs in five steps, from building a contact list to a booked call.</p>
+        </div>
+        <ol class="pipeline">
+          <li>
+            <h3>Find the buyers</h3>
+            <p>Search a contact database for the exact job titles and places we want.</p>
+          </li>
+          <li>
+            <h3>Clean the list</h3>
+            <p>Remove bad, duplicate, or wrong-fit contacts.</p>
+          </li>
+          <li>
+            <h3>Verify the emails</h3>
+            <p>Check every address is real before the outreach begins.</p>
+          </li>
+          <li>
+            <h3>Send the outreach</h3>
+            <p>A short 5-email sequence goes out over about two weeks.</p>
+          </li>
+          <li>
+            <h3>Book the call</h3>
+            <p>Anyone interested lands on a page and books a call with Michael.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="audience-heading">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="kicker">The audience</p>
+          <h2 id="audience-heading">Who we reached</h2>
+          <p class="section-intro">We emailed the people who plan public events and those who book entertainment for them. Tap any group for detail.</p>
+        </div>
+        <div class="accordion-stack">
+          <details>
+            <summary>
+              <span><span class="summary-title">Municipal and government</span><span class="summary-subtitle">City and county teams that plan public celebrations</span></span>
+            </summary>
+            <div class="detail-body">
+              <p>Special-events managers and parks-and-recreation directors at city and county governments who plan July 4th shows and community events.</p>
+              <p class="contact-count"><strong>About 105 contacts</strong></p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              <span><span class="summary-title">Festivals and special events</span><span class="summary-subtitle">The people who book acts for large outdoor events</span></span>
+            </summary>
+            <div class="detail-body">
+              <p>Festival directors, event producers, entertainment buyers, and fair managers. This was the largest segment, sent in four batches.</p>
+              <p class="contact-count"><strong>Roughly 1,000 to 1,750 contacts in each batch</strong></p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              <span><span class="summary-title">Casinos</span><span class="summary-subtitle">Casino teams that plan guest entertainment</span></span>
+            </summary>
+            <div class="detail-body">
+              <p>Marketing directors and vice presidents at casinos and tribal gaming resorts, focused within about a five-hour drive of Branson.</p>
+              <p class="contact-count"><strong>About 138 contacts</strong></p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              <span><span class="summary-title">Universities</span><span class="summary-subtitle">A future segment that has not launched</span></span>
+            </summary>
+            <div class="detail-body">
+              <p>Campus-events and alumni-relations directors were identified as a future audience.</p>
+              <p class="contact-count"><strong>Planned, not launched</strong></p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="locations-heading">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="kicker">The reach</p>
+          <h2 id="locations-heading">Where we reached them</h2>
+          <p class="section-intro">Each campaign focused on a specific group of states or regions.</p>
+        </div>
+        <div class="accordion-stack">
+          <details>
+            <summary>
+              <span><span class="summary-title">Municipal campaign</span><span class="summary-subtitle">Five nearby states</span></span>
+            </summary>
+            <div class="detail-body">
+              <ul class="chips" aria-label="Municipal campaign states">
+                <li>Missouri</li><li>Arkansas</li><li>Oklahoma</li><li>Illinois</li><li>Kansas</li>
+              </ul>
+            </div>
+          </details>
+          <details>
+            <summary>
+              <span><span class="summary-title">Festivals, batch 1</span><span class="summary-subtitle">The same five-state starting region</span></span>
+            </summary>
+            <div class="detail-body">
+              <ul class="chips" aria-label="Festivals batch 1 states">
+                <li>Missouri</li><li>Arkansas</li><li>Oklahoma</li><li>Illinois</li><li>Kansas</li>
+              </ul>
+            </div>
+          </details>
+          <details>
+            <summary>
+              <span><span class="summary-title">Festivals, batch 2</span><span class="summary-subtitle">South and Midwest expansion</span></span>
+            </summary>
+            <div class="detail-body">
+              <ul class="chips" aria-label="Festivals batch 2 states">
+                <li>Texas</li><li>Tennessee</li><li>Iowa</li><li>Indiana</li><li>Wisconsin</li>
+              </ul>
+            </div>
+          </details>
+          <details>
+            <summary>
+              <span><span class="summary-title">Festivals, batch 3</span><span class="summary-subtitle">Three large eastern states</span></span>
+            </summary>
+            <div class="detail-body">
+              <ul class="chips" aria-label="Festivals batch 3 states">
+                <li>Florida</li><li>Ohio</li><li>Georgia</li>
+              </ul>
+            </div>
+          </details>
+          <details>
+            <summary>
+              <span><span class="summary-title">Festivals, batch 4</span><span class="summary-subtitle">Northeast, Mid-Atlantic, and Pacific Northwest</span></span>
+            </summary>
+            <div class="detail-body">
+              <ul class="chips" aria-label="Festivals batch 4 states">
+                <li>New York</li><li>Pennsylvania</li><li>North Carolina</li><li>Virginia</li><li>Massachusetts</li><li>New Jersey</li><li>Connecticut</li><li>Washington</li><li>Oregon</li>
+              </ul>
+            </div>
+          </details>
+          <details>
+            <summary>
+              <span><span class="summary-title">Casinos</span><span class="summary-subtitle">Within about five hours of Branson</span></span>
+            </summary>
+            <div class="detail-body">
+              <ul class="chips" aria-label="Casino campaign states">
+                <li>Oklahoma</li><li>Missouri</li><li>Kansas</li><li>Arkansas</li><li>Illinois</li>
+              </ul>
+              <p class="contact-count">Oklahoma had the most, with <strong>30–40+ casinos in range</strong>.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="tools-heading">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="kicker">The moving parts</p>
+          <h2 id="tools-heading">The tools and subscriptions</h2>
+          <p class="section-intro">Each tool has one clear role. Tap a card to see what it does, who pays, and its current status.</p>
+        </div>
+        <div class="tools-grid">
+          <details>
+            <summary class="tool-summary">
+              <span><span class="summary-title">Apollo</span><span class="summary-subtitle">Find business contacts</span></span>
+              <span class="tool-tags"><span class="pill">$99/mo</span><span class="pill owner">Michael’s</span></span>
+            </summary>
+            <div class="detail-body">
+              <p>A searchable database of business contacts. We filter by job title, industry, and location, then export the matching email addresses. Its job is done once the prospect list is built.</p>
+              <p class="meta-line">Cost: <strong>$99/month</strong> · Paid by Michael · Status: <strong>Can pause</strong></p>
+            </div>
+          </details>
+          <details>
+            <summary class="tool-summary">
+              <span><span class="summary-title">Instantly</span><span class="summary-subtitle">Send and track outreach emails</span></span>
+              <span class="tool-tags"><span class="pill">$97/mo</span><span class="pill owner">Michael’s</span></span>
+            </summary>
+            <div class="detail-body">
+              <p>This sends the 5-email sequence to each prospect, tests two subject lines to see which gets opened more, tracks opens and clicks, and gathers every reply in one inbox. It also keeps the sending accounts trusted by email providers.</p>
+              <p class="meta-line">Cost: <strong>$97/month</strong> · Paid by Michael · Status: <strong>Can pause</strong></p>
+            </div>
+          </details>
+          <details>
+            <summary class="tool-summary">
+              <span><span class="summary-title">GoHighLevel</span><span class="summary-subtitle">Landing page, form, and booking</span></span>
+              <span class="tool-tags"><span class="pill">$97/mo</span><span class="pill owner">Michael’s</span></span>
+            </summary>
+            <div class="detail-body">
+              <p>This hosts the landing page linked from the emails. When someone fills out the form, it saves their information and automatically sends a welcome email with a booking link. It also keeps a simple customer list and tracks each deal from first contact to booked show.</p>
+              <p class="meta-line">Cost: <strong>$97/month</strong> · Paid by Michael · Status: <strong>Can pause after the landing page moves to skyglowdrones.com</strong></p>
+            </div>
+          </details>
+          <details>
+            <summary class="tool-summary">
+              <span><span class="summary-title">Microsoft 365</span><span class="summary-subtitle">Keep everyday business email separate</span></span>
+              <span class="tool-tags"><span class="pill">Existing</span><span class="pill owner">Michael’s</span></span>
+            </summary>
+            <div class="detail-body">
+              <p>This runs Michael’s everyday business email at skyglowdrones.com. It is completely separate from cold outreach.</p>
+              <p class="meta-line">Cost: <strong>Existing business expense</strong> · Paid by Michael · Status: <strong>Keep</strong></p>
+            </div>
+          </details>
+          <details>
+            <summary class="tool-summary">
+              <span><span class="summary-title">Zapmail</span><span class="summary-subtitle">Manage dedicated outreach inboxes</span></span>
+              <span class="tool-tags"><span class="pill">$25/mo</span><span class="pill owner">Alexana’s setup</span></span>
+            </summary>
+            <div class="detail-body">
+              <p>This created 10 sending inboxes in bulk and configured them so email providers treat the messages as legitimate. These inboxes stay separate from Michael’s real business email.</p>
+              <p class="meta-line">Cost: <strong>$25/month</strong> · Alexana infrastructure · Status: <strong>Winds down while outreach is paused</strong></p>
+            </div>
+          </details>
+          <details>
+            <summary class="tool-summary">
+              <span><span class="summary-title">Sending domains</span><span class="summary-subtitle">Protect Skyglow’s main web address</span></span>
+              <span class="tool-tags"><span class="pill">~$4/mo</span><span class="pill owner">Alexana’s setup</span></span>
+            </summary>
+            <div class="detail-body">
+              <p>Five web addresses on Cloudflare were used only for cold email. Keeping them separate protects skyglowdrones.com from outreach risk.</p>
+              <p class="meta-line">Cost: <strong>About $4/month, or about $50/year</strong> · Alexana infrastructure · Status: <strong>Winds down while outreach is paused</strong></p>
+            </div>
+          </details>
+          <details>
+            <summary class="tool-summary">
+              <span><span class="summary-title">skyglowdrones.com</span><span class="summary-subtitle">Main website and email foundation</span></span>
+              <span class="tool-tags"><span class="pill">Main domain</span><span class="pill owner">Michael’s</span></span>
+            </summary>
+            <div class="detail-body">
+              <p>This is Michael’s primary web address. It also holds the email-trust records that help his real business email reach inboxes instead of spam folders.</p>
+              <p class="meta-line">Paid by Michael · Status: <strong>Keep permanently</strong></p>
+            </div>
+          </details>
+          <details>
+            <summary class="tool-summary">
+              <span><span class="summary-title">ZeroBounce</span><span class="summary-subtitle">Check addresses before sending</span></span>
+              <span class="tool-tags"><span class="pill">Pay as used</span></span>
+            </summary>
+            <div class="detail-body">
+              <p>This checks that every email address on a list is real before sending. It has no monthly fee.</p>
+              <p class="meta-line">Cost: <strong>Pay as you go</strong> · Status: <strong>Stops on its own</strong></p>
+            </div>
+          </details>
+          <details>
+            <summary class="tool-summary">
+              <span><span class="summary-title">LinkedIn Sales Navigator</span><span class="summary-subtitle">Search LinkedIn by role</span></span>
+              <span class="tool-tags"><span class="pill">Free trial</span></span>
+            </summary>
+            <div class="detail-body">
+              <p>A paid LinkedIn upgrade for searching its professional network by job title and industry. It was only used on a trial for research.</p>
+              <p class="meta-line">Cost: <strong>Free trial, about $100/month if it converts</strong> · Status: <strong>Confirm it is cancelled</strong></p>
+            </div>
+          </details>
+          <details>
+            <summary class="tool-summary">
+              <span><span class="summary-title">Squarespace</span><span class="summary-subtitle">Manage the main domain records</span></span>
+              <span class="tool-tags"><span class="pill">Existing</span><span class="pill owner">Michael’s</span></span>
+            </summary>
+            <div class="detail-body">
+              <p>This is where Michael’s domain is registered. It only manages the domain’s technical settings, not the website itself.</p>
+              <p class="meta-line">Cost: <strong>Existing business expense</strong> · Paid by Michael · Status: <strong>Keep</strong></p>
+            </div>
+          </details>
+          <details>
+            <summary class="tool-summary">
+              <span><span class="summary-title">WordPress</span><span class="summary-subtitle">Run and improve the website</span></span>
+              <span class="tool-tags"><span class="pill">Website</span></span>
+            </summary>
+            <div class="detail-body">
+              <p>This is the platform that runs skyglowdrones.com, where the search improvements were made.</p>
+              <p class="meta-line">Status: <strong>Keep</strong></p>
+            </div>
+          </details>
+        </div>
+        <aside class="pause-callout" aria-labelledby="pause-heading">
+          <h3 id="pause-heading">What can pause while outreach is on hold</h3>
+          <p>Apollo, Instantly, and GoHighLevel total about <strong>$293 per month</strong>. Apollo and Instantly can pause now. GoHighLevel can pause after its landing page moves to skyglowdrones.com.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="timeline-heading">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="kicker">The work completed</p>
+          <h2 id="timeline-heading">What we did</h2>
+          <p class="section-intro">The main phases of work, in order.</p>
+        </div>
+        <div class="timeline">
+          <details>
+            <summary>
+              <span><span class="month">January 2026</span><span class="summary-title">Designed the system</span></span>
+            </summary>
+            <div class="detail-body">
+              <p>Signed on, designed the complete 5-stage system, and started the technical setup.</p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              <span><span class="month">February 2026</span><span class="summary-title">Set up the infrastructure and launched</span></span>
+            </summary>
+            <div class="detail-body">
+              <p>Fixed the email-trust records on skyglowdrones.com, built the landing page, and launched the first campaign to city governments.</p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              <span><span class="month">February to March 2026</span><span class="summary-title">Improved the website for search</span></span>
+            </summary>
+            <div class="detail-body">
+              <p>Completed a website search improvement pass in three priority rounds.</p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              <span><span class="month">March 2026</span><span class="summary-title">Expanded the outreach setup</span></span>
+            </summary>
+            <div class="detail-body">
+              <p>Expanded to five sending domains and 10 inboxes, with capacity for more than 300 emails per day, then launched the Festivals campaign.</p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              <span><span class="month">March to May 2026</span><span class="summary-title">Sent three more campaign rounds</span></span>
+            </summary>
+            <div class="detail-body">
+              <p>Built and sent three more rounds, covering Festivals batches 2 through 4 and the Casino segment across many states.</p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              <span><span class="month">May 2026</span><span class="summary-title">Added proposals and research</span></span>
+            </summary>
+            <div class="detail-body">
+              <p>Submitted a city request for proposal for Draper City, Utah, and a state-fair proposal for Tulsa. Also delivered an industry landscape report and an events and booth research report.</p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              <span><span class="month">June 2026</span><span class="summary-title">Documented the complete system</span></span>
+            </summary>
+            <div class="detail-body">
+              <p>Documented the whole system for Michael and recommended pausing subscriptions that are not needed while outreach is on hold.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer-inner">
+      <p><strong>Prepared for Michael Haygood</strong> · Skyglow Drones</p>
+      <p>Built by Alexana · Last updated July 2026</p>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+      document.querySelectorAll('details').forEach((details) => {
+        const summary = details.querySelector('summary');
+        let animation;
+
+        summary.addEventListener('click', (event) => {
+          if (reducedMotion.matches || !details.animate) return;
+          event.preventDefault();
+          animation?.cancel();
+
+          const startHeight = `${details.offsetHeight}px`;
+          const summaryHeight = `${summary.offsetHeight}px`;
+
+          if (!details.open) {
+            details.open = true;
+            const endHeight = `${details.offsetHeight}px`;
+            details.style.overflow = 'hidden';
+            animation = details.animate(
+              { height: [startHeight, endHeight] },
+              { duration: 260, easing: 'cubic-bezier(0.22, 1, 0.36, 1)' }
+            );
+          } else {
+            details.style.overflow = 'hidden';
+            animation = details.animate(
+              { height: [startHeight, summaryHeight] },
+              { duration: 210, easing: 'cubic-bezier(0.55, 0, 1, 0.45)' }
+            );
+            animation.addEventListener('finish', () => {
+              details.open = false;
+            }, { once: true });
+          }
+
+          animation.addEventListener('finish', () => {
+            details.style.overflow = '';
+            details.style.height = '';
+            animation = null;
+          }, { once: true });
+          animation.addEventListener('cancel', () => {
+            details.style.overflow = '';
+            details.style.height = '';
+          }, { once: true });
+        });
+      });
+
+      const canvas = document.getElementById('starfield');
+      const context = canvas && canvas.getContext('2d');
+      if (!context) return;
+
+      const colors = ['123, 194, 240', '24, 189, 91', '219, 235, 247'];
+      let dots = [];
+      let frame = 0;
+      let width = 0;
+      let height = 0;
+
+      function buildDots() {
+        const density = Math.min(95, Math.max(38, Math.round(width / 15)));
+        dots = Array.from({ length: density }, (_, index) => ({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          radius: Math.random() * 1.35 + 0.45,
+          alpha: Math.random() * 0.42 + 0.15,
+          speed: Math.random() * 0.035 + 0.008,
+          phase: Math.random() * Math.PI * 2,
+          color: colors[index % colors.length]
+        }));
+      }
+
+      function resize() {
+        const ratio = Math.min(window.devicePixelRatio || 1, 2);
+        const bounds = canvas.getBoundingClientRect();
+        width = bounds.width;
+        height = bounds.height;
+        canvas.width = Math.round(width * ratio);
+        canvas.height = Math.round(height * ratio);
+        context.setTransform(ratio, 0, 0, ratio, 0, 0);
+        buildDots();
+        draw(0);
+      }
+
+      function draw(time) {
+        context.clearRect(0, 0, width, height);
+        dots.forEach((dot) => {
+          const drift = reducedMotion.matches ? 0 : Math.sin(time * dot.speed * 0.01 + dot.phase) * 4;
+          const pulse = reducedMotion.matches ? 1 : 0.82 + Math.sin(time * 0.0007 + dot.phase) * 0.18;
+          context.beginPath();
+          context.arc(dot.x + drift, dot.y, dot.radius, 0, Math.PI * 2);
+          context.fillStyle = `rgba(${dot.color}, ${dot.alpha * pulse})`;
+          context.shadowBlur = dot.radius * 6;
+          context.shadowColor = `rgba(${dot.color}, 0.4)`;
+          context.fill();
+        });
+        context.shadowBlur = 0;
+      }
+
+      function animate(time) {
+        draw(time);
+        if (!reducedMotion.matches) frame = requestAnimationFrame(animate);
+      }
+
+      function updateMotion() {
+        cancelAnimationFrame(frame);
+        if (reducedMotion.matches) draw(0);
+        else frame = requestAnimationFrame(animate);
+      }
+
+      resize();
+      updateMotion();
+      window.addEventListener('resize', resize, { passive: true });
+      reducedMotion.addEventListener('change', updateMotion);
+    })();
+  </script>
+</body>
+</html>

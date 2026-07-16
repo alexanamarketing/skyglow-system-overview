@@ -1,0 +1,7 @@
+# Internal working files — never publish
+BRIEF.md
+BUILD-SPEC.md
+.codex-build-*.txt
+.shot*.js
+.shot-*.png
+node_modules/
